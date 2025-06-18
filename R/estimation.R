@@ -39,5 +39,7 @@ if(home & !momentum) {
 
 if(F) {
   devtools::load_all()
-  estimate_params()
+  input <- readr::read_csv("inst/extdata/results/nationalteams/women/results.csv")
+  data <- reshape_data(input = input)
+  estimate_params(data = data)
 }
